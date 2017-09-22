@@ -1,2 +1,2 @@
-!function($){alert("It works!")}(jQuery);
+jQuery;
 //# sourceMappingURL=home.js.map

@@ -38,10 +38,18 @@ gulp.task("img", function() {
 });
 
 
+gulp.task("fonts", function() {
+  gulp.src("static/fonts/**/*")
+        .pipe(gulp.dest("public/fonts"))
+        .pipe(livereload())
+});
+
+
 gulp.task("watch", function() {
     livereload.listen();
     gulp.watch("static/sass/**/*.scss", ["css"]);
-    gulp.watch("static/js/**/*.js", ["js"]);
+    gulp.watch("static/javascript/**/*.js", ["js"]);
     gulp.watch("static/vendor/**/*", ["vendor"]);
     gulp.watch("static/images/**/*", ["img"]);
+    gulp.watch("static/fonts/**/*", ["fonts"]);
 });

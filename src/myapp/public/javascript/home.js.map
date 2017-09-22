@@ -1,1 +1,1 @@
-{"version":3,"sources":["home.js"],"names":["$","alert","jQuery"],"mappings":"CAAA,SAAUA,GACNC,MAAM,cACPC","file":"home.js","sourcesContent":["(function($) {\r\n    alert(\"It works!\");\r\n})(jQuery);"]}
+{"version":3,"sources":["home.js"],"names":["jQuery"],"mappings":"AAEGA","file":"home.js","sourcesContent":["(function($) {\r\n    \r\n})(jQuery);"]}
