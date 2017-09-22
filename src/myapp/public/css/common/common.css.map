@@ -1,0 +1,1 @@
+{"version":3,"sources":["common.css"],"names":[],"mappings":"AAAA,oCACE,SAAU,AACV,SAAW,CAAE","file":"common.css","sourcesContent":["html, body, ul, li, p, h1, h2, h3, h4, h5, h6 {\n  margin: 0;\n  padding: 0; }\n"]}
