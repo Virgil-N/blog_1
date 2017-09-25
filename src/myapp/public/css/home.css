@@ -1,0 +1,2 @@
+#main-wrap{width:100%;overflow:hidden}#main{width:100%;min-height:100%}#main #main-content{position:absolute;padding-top:57px;width:100%;height:100%;box-sizing:border-box;display:block}@media only screen and (min-width:768px) and (max-width:1023px){#main-content{padding-left:75px}}@media only screen and (min-width:1024px) and (max-width:1279px){#main-content{padding-left:250px}}@media only screen and (min-width:1280px){#main-content{padding-left:500px}}
+/*# sourceMappingURL=home.css.map */

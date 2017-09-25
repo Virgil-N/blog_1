@@ -11,6 +11,6 @@ type Result struct {
 }
 
 func GetHome(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles("templates/home.html", "templates/common/header.html", "templates/common/footer.html", "templates/common/author_info.html"))
+	t := template.Must(template.ParseFiles("templates/home.html", "templates/common/header.html", "templates/common/footer.html", "templates/common/sidebar.html"))
 	t.ExecuteTemplate(w, "home", "你好，世界")
 }

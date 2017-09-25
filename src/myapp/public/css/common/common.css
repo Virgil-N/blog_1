@@ -1,2 +1,2 @@
-body,h1,h2,h3,h4,h5,h6,html,li,p,ul{margin:0;padding:0}body,html{font-size:62.5%}.clearfix:after{display:block;content:"";height:0;clear:both;visibility:hidden}
+body,h1,h2,h3,h4,h5,h6,html,li,p,ul{margin:0;padding:0}body{overflow:hidden}li,ul{list-style:none}a{text-decoration:none}.clearfix:after{display:block;content:"";height:0;clear:both;visibility:hidden}
 /*# sourceMappingURL=common.css.map */

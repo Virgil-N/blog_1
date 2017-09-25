@@ -4,10 +4,20 @@
 <head>
     <title>{{.}}</title>
     <link rel="stylesheet" type="text/css" href="/css/common/common.css">
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
     <script type="text/javascript" src="/vendor/jQuery/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-    {{template "header"}}
+    <div id="main-wrap">
+        {{template "header"}}
+        {{template "sidebar"}}
+        <div id="main">
+            <div id="main-content">
+                <p>现在数据还未创造</p>
+            </div>
+        </div>
+    </div>
+    
     <script type="text/javascript" src="/javascript/home.js"></script>
 </body>
 </html>

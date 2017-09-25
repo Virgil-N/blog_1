@@ -1,14 +1,16 @@
 {{define "header"}}
+<link rel="stylesheet" type="text/css" href="/vendor/font-awesome-4.7.0/css/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="/css/common/header.css">
-<nav>
-    <img src="/images/common/nav-bg-1.jpg">
-    <img src="/images/common/nav-bg-2.jpg">
-    <img src="/images/common/nav-bg-3.jpg">
-    <ul>
-        <li><a href="javascript:;">主页</a></li>
-        <li><a href="javascript:;">文章列表</a></li>
-        <li><a href="javascript:;">关于作者</a></li>
-    </ul>
-</nav>
+<header id="header">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a href="javscript:;">更多信息</a>
+    </div>
+    <div class="header-right-block">
+        <a href="javascript:;">
+            <img src="/images/common/avatar.jpeg" class="header-right-img">
+        </a>
+    </div>
+</header>
 <script type="text/javascript" src="/javascript/common/header.js"></script>
 {{end}}
