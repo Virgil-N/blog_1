@@ -8,6 +8,7 @@
     color: #88909a;
     z-index: 20;
     -webkit-transition: -webkit-transform .25s ease-in-out;
+    background-color: white;
     #btn-open-sidebar {
         position: absolute;
         top: 20px;
@@ -40,10 +41,10 @@
             }
         }
     }
-}
-
-@media only screen and (max-width: 767px) {
-    #header {
-        display: block;
+    @media only screen and (max-width: 767px) {
+        & {
+            display: block;
+        }
     }
 }
+

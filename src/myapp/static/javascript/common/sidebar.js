@@ -8,24 +8,24 @@
     function bindEvent() {
         $('body')
         // 点击页面上的空白区域隐藏sidebar
-        .on('click', '#main-content', function() {
+        .on('click', '#main-content, #header', function() {
             var $sidebar = $('#sidebar');
-            var $sidebarLeft = $sidebar.css('left');
+            var $sidebarLeft = parseInt($sidebar.css('left'));
             var $pageWidth = parseInt($('body').css('width'));
 
             if ($pageWidth > 767) {
                 return false;
             }
             
-            if ($sidebarLeft == '0px') {
+            if ($sidebarLeft === 0) {
 
                 $('#sidebar').animate({
                     left: -250
                 }, 'normal');
 
                 $('#main-content').animate({
-                    marginLeft: 0,
-                    width: $pageWidth
+                    marginLeft: 0
+                    // width: $pageWidth
                 }, 'normal');
 
                 $('#header').animate({
@@ -39,15 +39,14 @@
         // 显示隐藏sidebar
         .on('click', '#btn-open-sidebar', function() {
             var $sidebar = $('#sidebar');
-            var $sidebarLeft = $sidebar.css('left');
+            var $sidebarLeft = parseInt($sidebar.css('left'));
             var $pageWidth = parseInt($('body').css('width'));
-            console.log($pageWidth);
 
             if ($pageWidth > 767) {
                 return false;
             }
             
-            if ($sidebarLeft == '-250px') {
+            if ($sidebarLeft === -250) {
 
                 $('#sidebar').animate({
                     left: 0
@@ -61,7 +60,7 @@
                     marginLeft: 250
                 }, 'normal');
 
-            } else if ($sidebarLeft == '0px') {
+            } else if ($sidebarLeft === 0) {
 
                 $('#sidebar').animate({
                     left: -250
@@ -78,8 +77,29 @@
             } else {
                 return false;
             }
-            
         });
+
+        // 调整页面尺寸时做一次把sidebar还原的操作(不这样做会导致布局异常)
+        $(window).on('resize', function() {
+            var $sidebar = $('#sidebar');
+            var $sidebarLeft = parseInt($sidebar.css('left'));
+            var $pageWidth = parseInt($('body').css('width'));
+
+            if ($pageWidth < 767 && $sidebarLeft === 0) {
+                $('#sidebar').animate({
+                    left: -250
+                }, 'normal');
+
+                $('#main-content').animate({
+                    marginLeft: 0
+                }, 'normal');
+
+                $('#header').animate({
+                    marginLeft: 0
+                }, 'normal');
+            }
+        });
+
     }
 
     init();
