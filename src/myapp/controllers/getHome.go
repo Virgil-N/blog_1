@@ -27,7 +27,8 @@ func GetHome(w http.ResponseWriter, r *http.Request) {
 	// 	panic(err)
 	// }
 
-	rows, err := db.Query("select * from article")
+	// 内连接
+	rows, err := db.Query("select article.title, article.category, article.banner_url, article.content, article.created, author.name from article inner join author on article.author_id = author.id;")
 	if err != nil {
 		panic(err)
 	}
@@ -42,6 +43,7 @@ func GetHome(w http.ResponseWriter, r *http.Request) {
 	// 	fmt.Println(result)
 	// }
 
+	// 这个比较好
 	columns, _ := rows.Columns()
 	scanArgs := make([]interface{}, len(columns))
 	values := make([]interface{}, len(columns))

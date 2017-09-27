@@ -83,9 +83,12 @@
         $(window).on('resize', function() {
             var $sidebar = $('#sidebar');
             var $sidebarLeft = parseInt($sidebar.css('left'));
+            var $sidebarWidth = parseInt($sidebar.css('width'));
             var $pageWidth = parseInt($('body').css('width'));
-
-            if ($pageWidth < 767 && $sidebarLeft === 0) {
+            
+            // 233是带滚动条的sidebar宽度
+            if ($pageWidth < 767 && $sidebarLeft === 0 && ($sidebarWidth === 250 || $sidebarWidth === 233)) {
+                console.log($sidebarWidth);
                 $('#sidebar').animate({
                     left: -250
                 }, 'normal');

@@ -20,6 +20,9 @@
                 padding-bottom: 2rem;
             }
         }
+        .author-name {
+            margin-right: 10px;
+        }
         .first-article {
             text-align: center;
             .article-wrap {
@@ -37,8 +40,8 @@
                 .article-meta {
                     text-align: left;
                     margin-top: 5px;
+                    color: #9eabb3;
                     time, span {
-                        color: #9eabb3;
                         font-size: 0.8rem;
                     }
                 }
@@ -107,8 +110,8 @@
                     .article-meta {
                         text-align: left;
                         margin-top: 5px;
+                        color: #9eabb3;
                         time, span {
-                            color: #9eabb3;
                             font-size: .8rem;
                         }
                     }
