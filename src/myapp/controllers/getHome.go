@@ -2,12 +2,21 @@ package controllers
 
 import (
 	"database/sql"
-	// "fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"html/template"
 	// "myapp/models"
+	// "fmt"
 	"net/http"
 )
+
+type Result struct {
+	Title      string `json:"title"`
+	Category   string `json:"category"`
+	Banner_url string `json:"banner_url"`
+	Content    string `json:"content"`
+	Created    string `json:"created"`
+	AuthorName string `json:"authorName"`
+}
 
 func GetHome(w http.ResponseWriter, r *http.Request) {
 
@@ -28,7 +37,7 @@ func GetHome(w http.ResponseWriter, r *http.Request) {
 	// }
 
 	// 内连接
-	rows, err := db.Query("select article.title, article.category, article.banner_url, article.content, article.created, author.name from article inner join author on article.author_id = author.id;")
+	rows, err := db.Query("select article.id, article.title, article.category, article.banner_url, article.content, article.created, author.name from article inner join author on article.author_id = author.id;")
 	if err != nil {
 		panic(err)
 	}

@@ -20,7 +20,7 @@
                 padding-bottom: 2rem;
             }
         }
-        .author-name {
+        .author-name, .category {
             margin-right: 10px;
         }
         .first-article {
@@ -31,9 +31,12 @@
                 margin: auto;
                 padding-bottom: 30px;
                 border-bottom: 1px solid #eef2f8;
+                h1 {
+                    text-align: left;
+                }
                 .title {
                     color: #4A4A4A;
-                    display: block;
+                    display: inline-block;
                     text-align: left;
                     margin-top: 20px;
                 }
@@ -104,7 +107,7 @@
                     }
                     .title {
                         color: #4a4a4a;
-                        display: block;
+                        display: inline-block;
                         text-align: left;
                     }
                     .article-meta {

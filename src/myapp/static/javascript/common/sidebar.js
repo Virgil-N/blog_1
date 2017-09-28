@@ -8,33 +8,40 @@
     function bindEvent() {
         $('body')
         // 点击页面上的空白区域隐藏sidebar
-        .on('click', '#main-content, #header', function() {
-            var $sidebar = $('#sidebar');
-            var $sidebarLeft = parseInt($sidebar.css('left'));
-            var $pageWidth = parseInt($('body').css('width'));
+        .on('click', '#main-content, #header', function(e) {
 
-            if ($pageWidth > 767) {
-                return false;
-            }
-            
-            if ($sidebarLeft === 0) {
+            // 判断点击的元素和其祖先元素是否是超链接，当不是超链接时才执行
 
-                $('#sidebar').animate({
-                    left: -250
-                }, 'normal');
+            console.log($(e.target).closest('a')[0] !== undefined);
+            if (!(e.target.tagName === 'A') && !($(e.target).closest('a')[0] !== undefined)) {
+                var $sidebar = $('#sidebar');
+                var $sidebarLeft = parseInt($sidebar.css('left'));
+                var $pageWidth = parseInt($('body').css('width'));
 
-                $('#main-content').animate({
-                    marginLeft: 0
-                    // width: $pageWidth
-                }, 'normal');
+                if ($pageWidth > 767) {
+                    return false;
+                }
+                
+                if ($sidebarLeft === 0) {
 
-                $('#header').animate({
-                    marginLeft: 0
-                }, 'normal');
+                    $('#sidebar').animate({
+                        left: -250
+                    }, 'normal');
 
-            } else {
-                return false;
-            }
+                    $('#main-content').animate({
+                        marginLeft: 0
+                        // width: $pageWidth
+                    }, 'normal');
+
+                    $('#header').animate({
+                        marginLeft: 0
+                    }, 'normal');
+
+                } else {
+                    return false;
+                }
+
+            }   
         })
         // 显示隐藏sidebar
         .on('click', '#btn-open-sidebar', function() {
