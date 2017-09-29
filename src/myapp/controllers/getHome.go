@@ -12,7 +12,7 @@ import (
 type Result struct {
 	Title      string `json:"title"`
 	Category   string `json:"category"`
-	Banner_url string `json:"banner_url"`
+	BannerUrl  string `json:"bannerUrl"`
 	Content    string `json:"content"`
 	Created    string `json:"created"`
 	AuthorName string `json:"authorName"`
@@ -26,7 +26,7 @@ func GetHome(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	// stmt, err := db.Prepare("insert article (title, category, banner_url, content, author_position, athor_id) values (?, ?, ?, ?, ?, ?)")
+	// stmt, err := db.Prepare("insert article (title, category, BannerUrl, content, author_position, athor_id) values (?, ?, ?, ?, ?, ?)")
 	// if err != nil {
 	// 	panic(err)
 	// }
@@ -37,7 +37,7 @@ func GetHome(w http.ResponseWriter, r *http.Request) {
 	// }
 
 	// 内连接
-	rows, err := db.Query("select article.id, article.title, article.category, article.banner_url, article.content, article.created, author.name from article inner join author on article.author_id = author.id;")
+	rows, err := db.Query("select article.id, article.title, article.category, article.BannerUrl, article.content, article.created, author.name from article inner join author on article.author_id = author.id;")
 	if err != nil {
 		panic(err)
 	}
@@ -45,7 +45,7 @@ func GetHome(w http.ResponseWriter, r *http.Request) {
 	// 这种写法太长了
 	// for rows.Next() {
 	// 	var result models.Article
-	// 	err := rows.Scan(&result.Id, &result.Title, &result.Category, &result.Banner_url, &result.Content, &result.Created, &result.Author_position, &result.Author_id)
+	// 	err := rows.Scan(&result.Id, &result.Title, &result.Category, &result.BannerUrl, &result.Content, &result.Created, &result.Author_position, &result.Author_id)
 	// 	if err != nil {
 	// 		panic(err)
 	// 	}
