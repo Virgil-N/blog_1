@@ -7,9 +7,6 @@
         },
 
         insertArticles: function(results) {
-
-            console.log(results, results.length);
-
             var str = '';
             for (var i = 0; i < results.length; i++) {
                 str += '<article class="normal-article" data-article-id="' + results[i].articleId + '">' +
