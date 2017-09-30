@@ -62,11 +62,14 @@
     }
 
     @media only screen and (max-width: 479px) {
-        .banner-img{
+        .banner-img {
             display: none;
         }
         #main #main-content {
             padding-top: 90px;
+        }
+        #main #main-content .article-detail .article-wrap .title {
+            margin-top: 0;
         }
         .article-wrap {
             width: 100% !important;

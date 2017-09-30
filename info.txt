@@ -1,3 +1,7 @@
+--------------------------------------------------------------------------------------------------------
+------------------------------------建表语句很有可能已经改变，请谨慎参考--------------------------------
+--------------------------------------------------------------------------------------------------------
+
 1.article表的author_id字段添加了外键(和author表的id字段)
 
 
@@ -6,7 +10,7 @@
 
 重置auto_increment：ALTER TABLE table_name AUTO_INCREMENT = 1;
 添加外键：ALTER TABLE article ADD FOREIGN KEY (author_id) REFERENCES author(id);
-内连接：select article.title, article.category, article.banner_url, article.content, article.created, author.name from article inner join author on article.author_id = author.id;
+内连接：select article.title, article.category, article.bannerUrl, article.content, article.created, author.name from article inner join author on article.authorId = author.id;
 
 
 
@@ -16,11 +20,11 @@ CREATE TABLE `article` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `title` CHAR(50) NOT NULL,
     `category` CHAR(50) NULL DEFAULT '未知',
-    `banner_url` TEXT NULL DEFAULT '/images/common/default.jpg',
+    `bannerUrl` TEXT NULL DEFAULT '/images/common/default.jpg',
     `content` TEXT NULL DEFAULT NULL,
     `created` DATETIME NOT NULL,
-    `author_position` CHAR(50) NULL DEFAULT NULL,
-    `author_id` INT NOT NULL,
+    `authorPosition` CHAR(50) NULL DEFAULT NULL,
+    `authorId` INT NOT NULL,
     PRIMARY KEY (`id`)
 )
 COLLATE='utf8_general_ci'
@@ -33,19 +37,19 @@ AUTO_INCREMENT=4
 insert into article (
     title,
     category,
-    banner_url,
+    bannerUrl,
     content,
     created,
-    author_position,
-    author_id
+    authorPosition,
+    authorId
 ) values(
-    '国庆节前夕记事',
+    '关于新能源汽车的未来解析',
     '生活',
-    '/images/home/article_1.jpg',
-    '迎国庆，庆中秋。',
+    '/images/home/default.jpg',
+    '新能源汽车是指采用非常规的车用燃料作为动力来源（或使用常规的车用燃料、采用新型车载动力装置），综合车辆的动力控制和驱动方面的先进技术，形成的技术原理先进、具有新技术、新结构的汽车。',
     now(),
-    '浙江省杭州市拱墅区灯彩街22号',
-    1
+    '浙江省杭州市西湖区三墩街9号',
+    4
 );
 
 ----------------------------------------------------
@@ -64,3 +68,21 @@ AUTO_INCREMENT=4
 ;
 
 ----------------------------------------------------
+
+insert into author (
+    name,
+    sex,
+    country
+) values(
+    '吴彦祖',
+    '男',
+    '中国'
+);
+
+
+
+
+
+
+
+

@@ -16,10 +16,10 @@
                 <div class="articles">
                     {{range $k, $v :=.}}
                         {{if eq $k 0}}
-                            <article class="first-article">
+                            <article class="first-article" data-article-id={{.id}}>
                                 <div class="article-wrap">
                                     <a href="/getArticle?articleId={{.id}}">
-                                        <img src={{.BannerUrl}} class="banner-img">
+                                        <img src={{.bannerUrl}} class="banner-img">
                                     </a>
                                     <h1>
                                         <a href="/getArticle?articleId={{.id}}" class="title">{{.title}}</a>
@@ -41,11 +41,11 @@
                                 </div>
                             </article>
                         {{else}}
-                            <article class="normal-article">
+                            <article class="normal-article" data-article-id={{.id}}>
                                 <div class="normal-article-wrap clearfix">
                                     <div class="normal-banner">
                                         <a href="/getArticle?articleId={{.id}}">
-                                            <img src={{.BannerUrl}}>
+                                            <img src={{.bannerUrl}}>
                                         </a>
                                     </div>
                                     <div class="normal-text-wrap">
@@ -68,7 +68,6 @@
                                         </div> 
                                     </div>
                                 </div>
-                                
                             </article>
                         {{end}}
                     {{end}}
@@ -78,7 +77,7 @@
         </div>
     </div>
     
-    <!-- <script type="text/javascript" src="/javascript/home.js"></script> -->
+    <script type="text/javascript" src="/javascript/home.js"></script>
 </body>
 </html>
 {{end}}

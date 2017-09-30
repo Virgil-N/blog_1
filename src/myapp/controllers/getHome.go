@@ -10,6 +10,7 @@ import (
 )
 
 type Result struct {
+	ArticleId  int    `json:"articleId"`
 	Title      string `json:"title"`
 	Category   string `json:"category"`
 	BannerUrl  string `json:"bannerUrl"`
@@ -37,7 +38,7 @@ func GetHome(w http.ResponseWriter, r *http.Request) {
 	// }
 
 	// 内连接
-	rows, err := db.Query("select article.id, article.title, article.category, article.BannerUrl, article.content, article.created, author.name from article inner join author on article.author_id = author.id;")
+	rows, err := db.Query("select article.id, article.title, article.category, article.bannerUrl, article.content, article.created, author.name from article inner join author on article.authorId = author.id order by article.created desc limit 5;")
 	if err != nil {
 		panic(err)
 	}
@@ -52,7 +53,7 @@ func GetHome(w http.ResponseWriter, r *http.Request) {
 	// 	fmt.Println(result)
 	// }
 
-	// 这个比较好
+	// 这个比较好(只是在没有外加条件的情况下，详见GetMoreArticles函数)
 	columns, _ := rows.Columns()
 	scanArgs := make([]interface{}, len(columns))
 	values := make([]interface{}, len(columns))

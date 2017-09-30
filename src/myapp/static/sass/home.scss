@@ -28,6 +28,7 @@
             .article-wrap {
                 width: 100%;
                 max-width: 750px;
+                overflow: hidden;
                 margin: auto;
                 padding-bottom: 30px;
                 border-bottom: 1px solid #eef2f8;
@@ -48,8 +49,11 @@
                         font-size: 0.8rem;
                     }
                 }
+                a {
+                    display: inline-block;
+                    overflow: hidden;
+                }
                 .banner-img {
-                    width: 100%;
                     max-width: 750px;
                     height: 250px;
                 }
@@ -94,8 +98,12 @@
                     height: 140px;
                     float: left;
                     margin-right: 15px;
-                    img {
+                    a {
                         width: 140px;
+                        display: inline-block;
+                        overflow: hidden;
+                    }
+                    img {
                         height: 140px;
                     }
                 }
@@ -152,6 +160,12 @@
         }
         #main #main-content {
             padding-top: 90px;
+        }
+        #main #main-content .first-article {
+            margin-top: -20px;
+        }
+        #main #main-content .first-article .article-wrap .title {
+            margin-top: 0;
         }
         .article-wrap, .normal-article-wrap, .normal-text-wrap {
             width: 100% !important;

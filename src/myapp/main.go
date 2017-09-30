@@ -18,6 +18,7 @@ func main() {
 	r.HandleFunc("/", controllers.GetHome)
 	r.HandleFunc("/home", controllers.GetHome)
 	r.HandleFunc("/getArticle", controllers.GetArticle)
+	r.HandleFunc("/getMoreArticles", controllers.GetMoreArticles).Queries("created", "{created:[0-9]+}")
 
 	http.Handle("/", r)
 
