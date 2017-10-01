@@ -47,7 +47,7 @@
                 var scrollTopHeightAfter = parseFloat($(window).scrollTop());
                 var browserHeight= parseFloat($(window).height());
                 var documentHeight = parseFloat($(document).height());
-                if (documentHeight - browserHeight - scrollTopHeightAfter <= 300) {
+                if (documentHeight - browserHeight - scrollTopHeightAfter <= 100) {
 
                     var created = (new Date($('article').last().find('time').text())).getTime() / 1000;
 
