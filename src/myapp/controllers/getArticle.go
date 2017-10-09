@@ -44,6 +44,7 @@ func GetMoreArticles(w http.ResponseWriter, r *http.Request) {
 	created := r.FormValue("created")
 
 	if len(created) == 0 {
+		w.Write([]byte("获取创建时间失败"))
 		return
 	}
 

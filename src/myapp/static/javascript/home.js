@@ -43,20 +43,36 @@
 
         bindEvent: function() {
             // 滚动加载
+            var status = true;
             $(window).on('scroll', function() {
                 var scrollTopHeightAfter = parseFloat($(window).scrollTop());
                 var browserHeight= parseFloat($(window).height());
                 var documentHeight = parseFloat($(document).height());
-                if (documentHeight - browserHeight - scrollTopHeightAfter <= 100) {
+                
+                if (documentHeight - browserHeight - scrollTopHeightAfter <= 100 && status) {
 
-                    var created = (new Date($('article').last().find('time').text())).getTime() / 1000;
+                    // 获取现在和1970年1月1日之间的毫秒数，再获取时间戳(格林威治时间1970年01月01日00时00分00秒起至现在的总秒数)
+                    var timeStr = $('article').last().find('time').text();
+                    var timeArr = timeStr.split('-');
+                    var year = timeArr[0];
+                    var month = timeArr[1] - 1;
+                    var date = timeArr[2].split(' ')[0];
+                    var hour = timeArr[2].split(' ')[1].split(':')[0];
+                    var minite = timeArr[2].split(' ')[1].split(':')[1];
+                    var second = timeArr[2].split(' ')[1].split(':')[2];
+                    var created = (new Date(year, month, date, hour, minite, second)).getTime() / 1000;
 
                     $.ajax({
                         type: 'get',
                         url: '/getMoreArticles?created=' + created,
                         async: false,
+                        contentType: 'application/json;charset=utf-8',
+                        error: function(err) {
+                            alert(err);
+                        },
                         success: function(msg){
                             if (msg === 'null') {
+                                status = false;
                                 return false;
                             }
                             home.insertArticles(JSON.parse(msg));

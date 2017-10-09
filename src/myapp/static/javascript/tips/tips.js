@@ -21,5 +21,3 @@ if (/firefox/i.test(agent)) {
         }
     };
 }
-
-// 
