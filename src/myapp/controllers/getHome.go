@@ -4,20 +4,8 @@ import (
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
 	"html/template"
-	// "myapp/models"
-	// "fmt"
 	"net/http"
 )
-
-type Result struct {
-	ArticleId  int    `json:"articleId"`
-	Title      string `json:"title"`
-	Category   string `json:"category"`
-	BannerUrl  string `json:"bannerUrl"`
-	Content    string `json:"content"`
-	Created    string `json:"created"`
-	AuthorName string `json:"authorName"`
-}
 
 func GetHome(w http.ResponseWriter, r *http.Request) {
 

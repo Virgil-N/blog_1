@@ -20,6 +20,9 @@ func main() {
 	r.HandleFunc("/getArticle", controllers.GetArticle)
 	// 不加Queries("created", "{created:[0-9]+}")貌似也可以的......
 	r.HandleFunc("/getMoreArticles", controllers.GetMoreArticles).Queries("created", "{created:[0-9]+}")
+	r.HandleFunc("/edit", controllers.Edit)
+	r.HandleFunc("/login", controllers.Login)
+	r.HandleFunc("/isLogin", controllers.IsLogin)
 
 	http.Handle("/", r)
 

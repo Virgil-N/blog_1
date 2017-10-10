@@ -1,0 +1,28 @@
+{{define "edit"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/common/common.css">
+    <link rel="stylesheet" type="text/css" href="/css/edit.css">
+    <script type="text/javascript" src="/vendor/jQuery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/vendor/tinymce/tinymce.min.js"></script>
+</head>
+<body>
+    <div id="main-wrap">
+        {{template "header"}}
+        {{template "sidebar"}}
+        <div id="main">
+            <section id="main-content">
+                <div class="edit">
+                    <textarea id="editor"></textarea>
+                </div>
+            </section>
+            {{template "footer"}}
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="/javascript/edit.js"></script>
+</body>
+</html>
+{{end}}

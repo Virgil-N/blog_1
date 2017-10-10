@@ -1,0 +1,100 @@
+// #main-wrap {
+//     width: 100%;
+//     overflow: hidden;
+//     #main {
+//         width: 100%;
+//         min-height: 100%;
+//     }
+//     #main-content {
+//         padding-top: 30px;
+//         width: 100%;
+//         height: 100%;
+//         box-sizing: border-box;
+//         display: block;
+//         overflow-y: auto;
+//         .login {
+//             padding: 0 20px;
+//             overflow: auto;
+//         }
+//     }
+//     @media only screen and (max-width: 479px) {
+//         #main #main-content {
+//             padding-top: 90px;
+//         }
+//     }
+//     @media only screen and (min-width: 480px) and (max-width: 767px) {
+//         #main #main-content {
+//             padding-top: 90px;
+//         }
+//     }
+//     @media only screen and (min-width: 768px) and (max-width: 1023px) {
+//         #main-content, #footer {
+//             padding-left: 75px;
+//         }
+//     }
+//     @media only screen and (min-width: 1024px) and (max-width: 1279px) {
+//         #main-content, #footer {
+//             padding-left: 250px;
+//         }
+//     }
+//     @media only screen and (min-width: 1280px) {
+//         #main-content, #footer {
+//             padding-left: 500px;
+//         }
+//     }
+// }
+html, body {
+    height: 100%;
+    background-image: url(/images/common/cover.jpg);
+}
+.main {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    #login {
+        width: 450px;
+        height: 250px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        padding-top: 40px;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.18), 0 1px 5px 0 rgba(0,0,0,.15);
+        label {
+            display: block;
+            padding-top: 30px;
+            span {
+                color: #feab3a;
+                width: 100px;
+                display: inline-block;
+                text-align: right;
+                padding-right: 30px;
+                box-sizing: border-box;
+            }
+            input {
+                color: #feab3a;
+                width: 160px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                border-bottom: 1px solid #feab3a;
+                height: 18px;
+                vertical-align: bottom;
+            }
+        }
+        div {
+            margin: auto;
+            .login-btn {
+                outline: none;
+                margin-top: 10px;
+                width: 60px;
+            }
+        }
+        
+    }
+}
