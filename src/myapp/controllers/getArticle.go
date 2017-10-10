@@ -19,6 +19,7 @@ type Result struct {
 
 func GetArticle(w http.ResponseWriter, r *http.Request) {
 
+	r.ParseForm()
 	articleId := r.FormValue("articleId")
 
 	if len(articleId) == 0 {

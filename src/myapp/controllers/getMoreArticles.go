@@ -11,6 +11,7 @@ import (
 // 滚动获取文章
 func GetMoreArticles(w http.ResponseWriter, r *http.Request) {
 
+	r.ParseForm()
 	created := r.FormValue("created")
 
 	if len(created) == 0 {

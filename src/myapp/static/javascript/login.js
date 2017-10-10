@@ -7,7 +7,7 @@
         init: function() {
             // 如果已经登录则直接跳转到home页面
             var cookieValue = getCookie('isLogin');
-            if(cookieValue == isLogin) {
+            if(cookieValue === isLogin) {
                 window.location.href = window.location.protocol + '//' + window.location.host + '/home';
             }
 

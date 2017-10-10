@@ -23,6 +23,7 @@ func main() {
 	r.HandleFunc("/edit", controllers.Edit)
 	r.HandleFunc("/login", controllers.Login)
 	r.HandleFunc("/isLogin", controllers.IsLogin)
+	r.HandleFunc("/logout", controllers.Logout)
 
 	http.Handle("/", r)
 

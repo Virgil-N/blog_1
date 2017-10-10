@@ -1,6 +1,17 @@
 (function($) {
 
+    var isLogin = 'yes';
+
     function init() {
+
+        var cookieValue = getCookie('isLogin');
+        if(cookieValue === isLogin) {
+            $('#login').hide();
+            $('#logout').show();
+        } else {
+            $('#login').show();
+            $('#logout').hide();
+        }
 
     }
 
