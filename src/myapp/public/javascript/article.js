@@ -1,2 +1,2 @@
-
+!function($){var login={init:function(){"yes"===getCookie("isLogin")&&(window.location.href=window.location.protocol+"//"+window.location.host+"/home")},submitForm:function(){var o={username:$("#username").val(),password:$("#password").val()};$.ajax({type:"post",url:"/isLogin",data:o,async:!1,error:function(err){console.log(err)},success:function(msg){"yes"===msg?window.location.href=window.location.protocol+"//"+window.location.host+"/home":alert(msg)}})},bindEvent:function(){$("body").on("click",".login-btn",function(){login.submitForm()}).on("keyup",function(e){13===(e.which||e.keyCode)&&login.submitForm()})}};login.init(),login.bindEvent()}(jQuery);
 //# sourceMappingURL=article.js.map

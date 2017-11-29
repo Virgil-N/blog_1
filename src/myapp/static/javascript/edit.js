@@ -17,4 +17,9 @@
         ]
     });
 
+    $('body').on('click', '#submit', function() {
+        var content = tinymce.get('editor').getContent();
+    });
+    
+
 })(jQuery);
