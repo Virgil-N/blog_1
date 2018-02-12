@@ -3,7 +3,8 @@
 
 ### 说明：
 * 见info.txt
-* 1.vue-cli生成项目且没有使用webpack，详情见https://github.com/vuejs/vue-cli/blob/dev/docs/cli.md和https://github.com/vuejs/vue-               cli/blob/dev/docs/cli-service.md。
+* 1.vue-cli生成项目且没有使用webpack，详情见https://github.com/vuejs/vue-cli/blob/dev/docs/cli.md
+https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md。
 * 2.启动项目命令：vue serve ./src/main.js，编译命令：vue build ./src/main.js。
 * 3.在项目中使用sass，添加的命令为：npm install node-sass --save和npm install sass-loader --save。
 * 4.在vue.config.js中的devServer中修改服务启动参数。
